@@ -13,7 +13,7 @@ function random(min, max) {
   return num;
 }
 
-function Ball(x, y, velX, velY, color, size,) {
+function Ball(x, y, velX, velY, color, size) {
   this.x = x;
   this.y = y;
   this.velX = velX;
@@ -26,7 +26,7 @@ function Ball(x, y, velX, velY, color, size,) {
 
 Ball.prototype.draw = function () {
   ctx.beginPath();
-  ctx.fillstyle = this.color;
+  ctx.fillStyle = this.color;
   ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
   ctx.fill();
 
