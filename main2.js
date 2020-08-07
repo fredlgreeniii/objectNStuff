@@ -13,7 +13,7 @@ function random(min, max) {
   return num;
 }
 
-function Ball(x, y, velX, velY, color, size,) {
+function Ball(x, y, velX, velY, color, size) {
   this.x = x;
   this.y = y;
   this.velX = velX;
@@ -22,24 +22,23 @@ function Ball(x, y, velX, velY, color, size,) {
   this.size = size;
 }
 
-//Drawing the Ball
+// drawing the ball
 
 Ball.prototype.draw = function () {
   ctx.beginPath();
-  ctx.fillstyle = this.color;
+  ctx.fillStyle = this.color;
   ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
   ctx.fill();
-
 }
 
-// Update the balls Data
+// Update the ball's data
 
 Ball.prototype.update = function() {
   if ((this.x + this.size) >= width) {
     this.velX = -(this.velX);
   }
 
-  if((this.x + this.size) <= 0) {
+  if((this.x - this.size) <= 0) {
     this.velX = -(this.velX);
   }
 
@@ -47,7 +46,7 @@ Ball.prototype.update = function() {
     this.velY = -(this.velY);
   }
 
-  if((this.y + this.size) <= 0) {
+  if((this.y - this.size) <= 0) {
     this.velY = -(this.velY);
   }
 
@@ -55,20 +54,20 @@ Ball.prototype.update = function() {
   this.y += this.velY;
 }
 
-// Create a place to store balls
+// Create space to store and populate balls
 
 let balls = [];
 
-while (balls.lenght < 25) {
+while (balls.length < 25) {
   let size = random(10,20);
   let ball = new Ball(
-    //ball position always drawn at least one ball width
-    //aways from the edge of the canvas, to avoid drawing errors
+    //ball position alwasys drawn at least one ball width
+    //away from the edge of the canvas, to aviod drawing errors
     random(0 + size, width - size),
     random(0 + size, height - size),
     random(-7,7),
     random(-7,7),
-    "rgb(" + random(0,255) + "," + random(0,255) + "," + random(0,255) + ")",
+    'rgb(' + random(0,255) + ',' + random(0,255) + ',' + random(0,255) + ')',
     size
   );
 
@@ -76,7 +75,7 @@ while (balls.lenght < 25) {
 }
 
 function loop() {
-  ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
   ctx.fillRect(0, 0, width, height);
 
   for (let i = 0; i < balls.length; i++) {
