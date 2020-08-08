@@ -66,7 +66,7 @@ Ball.prototype.update = function() {
 }
 */
 let func = Ball.prototype.update => ()
-
+ 
 
 // Create a place to store balls
 
