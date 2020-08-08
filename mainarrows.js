@@ -8,11 +8,13 @@ const height = canvas.height = window.innerHeight;
 
 // function to generate random number
 
-/*function random(min, max) {
+/*
+function random(min, max) {
   const num = Math.floor(Math.random() * (max - min + 1)) + min;
   return num;
 }
 */
+
 let func = random(min,max) => const num
 
 /*
@@ -25,10 +27,11 @@ function Ball(x, y, velX, velY, color, size) {
   this.size = size;
 }
 */
+
 let func = (x, y, velX, velY, color, size) => Ball
 
 //Drawing the Ball
-
+/*
 Ball.prototype.draw = function () {
   ctx.beginPath();
   ctx.fillStyle = this.color;
@@ -36,9 +39,11 @@ Ball.prototype.draw = function () {
   ctx.fill();
 
 }
+*/
+let func = Ball=> ()
 
 // Update the balls Data
-
+/*
 Ball.prototype.update = function() {
   if ((this.x + this.size) >= width) {
     this.velX = -(this.velX);
@@ -59,6 +64,9 @@ Ball.prototype.update = function() {
   this.x += this.velX;
   this.y += this.velY;
 }
+*/
+let func = Ball.prototype.update => ()
+
 
 // Create a place to store balls
 
